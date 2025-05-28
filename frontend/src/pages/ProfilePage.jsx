@@ -19,13 +19,16 @@ const ProfilePage = () => {
       await updateProfile({ profilePic: base64Image });
     };
   };
+
   return (
-    <div className="h-screen pt-20">
-      <div className="nax-w-2xl mx-auto p-4 py-8">
-        <div className="bg-base-300 rounded-xl p-6 space-y-8">
+    <div className="min-h-screen pt-20 px-4 sm:px-6 md:px-8">
+      <div className="max-w-2xl mx-auto p-4 py-8">
+        <div className="bg-base-300 rounded-xl p-4 sm:p-6 space-y-8">
           <div className="text-center">
-            <h1 className="text-2xl font-semibold">Profile</h1>
-            <p className="mt-2">Your profile information</p>
+            <h1 className="text-xl sm:text-2xl font-semibold">Profile</h1>
+            <p className="mt-2 text-sm sm:text-base">
+              Your profile information
+            </p>
           </div>
 
           <div className="flex flex-col items-center gap-4">
@@ -33,7 +36,7 @@ const ProfilePage = () => {
               <img
                 src={selectedImage || authUser.profilePic || "/avatar.jpg"}
                 alt="Profile"
-                className="size-32 rounded-full object-cover border-4"
+                className="w-24 h-24 sm:size-32 rounded-full object-cover border-4"
               />
               <label
                 htmlFor="avatar-upload"
@@ -41,7 +44,7 @@ const ProfilePage = () => {
                   isUpdatingProfile ? "animate-pulse pointer-events-none" : ""
                 }`}
               >
-                <Camera className="w-5 h-5 text-base-200" />
+                <Camera className="w-4 h-4 sm:w-5 sm:h-5 text-base-200" />
                 <input
                   type="file"
                   id="avatar-upload"
@@ -53,7 +56,7 @@ const ProfilePage = () => {
               </label>
             </div>
 
-            <p className="text-sm text-zinc-400">
+            <p className="text-xs sm:text-sm text-zinc-400 text-center">
               {isUpdatingProfile
                 ? "Uploading"
                 : "Click the camera icon to upload your photo"}
@@ -66,7 +69,7 @@ const ProfilePage = () => {
                 <User className="w-4 h-4" />
                 Full Name
               </div>
-              <p className="px-4 py-2.5 bg-base-200 rounded-lg border">
+              <p className="px-4 py-2.5 bg-base-200 rounded-lg border break-words">
                 {authUser?.fullName}
               </p>
             </div>
@@ -76,14 +79,16 @@ const ProfilePage = () => {
                 <Mail className="w-4 h-4" />
                 Email Address
               </div>
-              <p className="px-4 py-2.5 bg-base-200 rounded-lg border">
+              <p className="px-4 py-2.5 bg-base-200 rounded-lg border break-words">
                 {authUser?.email}
               </p>
             </div>
           </div>
 
-          <div className="mt-6 bg-base-300 rounded-xl p-6">
-            <h2 className="text-lg font-medium mb-4">Account Information</h2>
+          <div className="mt-6 bg-base-300 rounded-xl p-4 sm:p-6">
+            <h2 className="text-base sm:text-lg font-medium mb-4">
+              Account Information
+            </h2>
             <div className="space-y-3 text-sm">
               <div className="flex items-center justify-between py-2 border-b border-zinc-700">
                 <span>Member Since</span>

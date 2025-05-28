@@ -15,8 +15,8 @@ const PREVIEW_MESSAGE = [
 const SettingPage = () => {
   const { theme, setTheme } = useThemeStore();
   return (
-    <div className="h-screen container mx-auto px-4 pt-20 max-w-5xl">
-      <div className="space-y-6">
+    <div className="min-h-screen w-full px-4 sm:px-6 lg:px-8 pt-20">
+      <div className="max-w-6xl mx-auto space-y-6">
         <div className="flex flex-col gap-1">
           <h2 className="text-lg font-semibold">Theme</h2>
           <p className="text-sm text-base-content/70">
@@ -24,7 +24,7 @@ const SettingPage = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-2">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-2">
           {THEMES.map((t) => (
             <button
               key={t}
@@ -55,7 +55,7 @@ const SettingPage = () => {
         <h3 className="text-lg font-semibold mb-3">Preview</h3>
         <div className="rounded-xl border border-base-300 overflow-hidden bg-base-100 shadow-lg">
           <div className="p-4 bg-base-200">
-            <div className="max-w-lg mx-auto">
+            <div className="max-w-full sm:max-w-md mx-auto">
               <div className="bg-base-100 rounded-xl shadow-sm overflow-hidden">
                 <div className="px-4 py-3 border-b border-base-300 bg-base-100">
                   <div className="flex items-center gap-3">
@@ -78,7 +78,7 @@ const SettingPage = () => {
                       }`}
                     >
                       <div
-                        className={`max-w-[80%] rounded-xl p-3 shadow-sm ${
+                        className={`max-w-[85%] rounded-xl p-3 shadow-sm ${
                           message.isSent
                             ? "bg-primary text-primary-content"
                             : "bg-base-200"
@@ -100,7 +100,7 @@ const SettingPage = () => {
                 </div>
 
                 <div className="p-4 border-t border-base-300 bg-base-100">
-                  <div className="flex gap-2">
+                  <div className="flex flex-col sm:flex-row gap-2">
                     <input
                       type="text"
                       className="input input-bordered flex-1 text-sm h-10"
